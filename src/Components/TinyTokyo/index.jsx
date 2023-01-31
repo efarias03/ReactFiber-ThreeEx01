@@ -12,7 +12,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function Model(props) {
     const group = useRef();
-    const { nodes, materials, animations } = useGLTF("/LittlestTokyo.glb");
+    const { nodes, materials, animations } = useGLTF("LittlestTokyo.glb");
     const { actions } = useAnimations(animations, group);
     useEffect(() => void (actions['Take 001'].play().paused = false))
     useFrame(({ clock }) => {
@@ -1000,4 +1000,4 @@ export function Model(props) {
     );
 }
 
-useGLTF.preload("/LittlestTokyo.glb");
+useGLTF.preload("LittlestTokyo.glb");
